@@ -1,43 +1,47 @@
 .sidebar {
     position: fixed;
-    background: #191919;
+    background-color: #191919;
     margin: 0;
     color: $font-color;
     .logo {
-        .just-do-it {
-            font-family: 'Bubblegum Sans', cursive;
-            font-size: 24px;
-        }
+        font-family: 'Bubblegum Sans', cursive;
+        font-size: 24px;
     }
-    .menu {
-        display: none;
-        list-style-type: none;
-        li {
-            margin: auto 0;
-            position: relative;
-            span {
-                display: none;
-            }
-            &:hover {
-                background-color: #282828;
-                color: white;
+    nav {
+        ul {    
+            display: none;
+            list-style-type: none;
+            li {
+                margin: auto 0;
+                position: relative;
                 span {
-                    display: visible;
-                    position: absolute;
-                    margin: 0;
-                    padding: 0;
-                    width: 5px;
-                    background-color: $main-color;
+                    display: none;
+                }
+                &:hover {
+                    background-color: #282828;
+                    color: white;
+                    span {
+                        display: visible;
+                        position: absolute;
+                        margin: 0;
+                        padding: 0;
+                        width: 5px;
+                        background-color: $main-color;
+                    }
+                }
+                a {
+                    text-decoration: none;
                 }
             }
         }
     }
-}
-
-@media (max-width: 767px){
-    .sidebar {
-        .menu {
-            display: visible;
-        }
+    hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
     }
 }

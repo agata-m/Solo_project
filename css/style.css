@@ -557,36 +557,36 @@ body {
 /* Sections */
 .sidebar {
   position: fixed;
-  background: #191919;
+  background-color: #191919;
   margin: 0;
   color: grey;
 }
 
-.sidebar .logo .just-do-it {
+.sidebar .logo {
   font-family: 'Bubblegum Sans', cursive;
   font-size: 24px;
 }
 
-.sidebar .menu {
+.sidebar nav ul {
   display: none;
   list-style-type: none;
 }
 
-.sidebar .menu li {
+.sidebar nav ul li {
   margin: auto 0;
   position: relative;
 }
 
-.sidebar .menu li span {
+.sidebar nav ul li span {
   display: none;
 }
 
-.sidebar .menu li:hover {
+.sidebar nav ul li:hover {
   background-color: #282828;
   color: white;
 }
 
-.sidebar .menu li:hover span {
+.sidebar nav ul li:hover span {
   display: visible;
   position: absolute;
   margin: 0;
@@ -595,10 +595,18 @@ body {
   background-color: #F58121;
 }
 
-@media (max-width: 767px) {
-  .sidebar .menu {
-    display: visible;
-  }
+.sidebar nav ul li a {
+  text-decoration: none;
+}
+
+.sidebar hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
 }
 
 /* Pages / Views */

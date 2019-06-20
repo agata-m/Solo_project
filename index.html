@@ -4,56 +4,62 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Solo project</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <section id="general">
             <div class="sidebar container col-m-2">
-                <div class="logo">
-                    <div>Just do it</div>
-                    <div>
-                        <nav class="nav-bar"></nav>
-                    </div>
-                </div>
-                <ul class="menu">
-                    <li>
-                        <span></span>
-                        <div><img src="/images/general.svg" alt="" class="icon" /></div>
-                        <p>General</p>
-                    </li>
-                    <li>
-                        <span></span>
-                        <img src="/images/details.svg" alt="" class="icon" />
-                        <p>Details</p>
-                    </li>
-                    <li>
-                        <span></span>
-                        <img src="/images/links.svg" alt="" class="icon" />
-                        <p>Links</p>
-                    </li>
-                    <li>
-                        <span></span>
-                        <img src="/images/banners.svg" alt="" class="icon" />
-                        <p>Banners</p>
-                    </li>
-                    <li>
-                        <span></span>
-                        <img src="/images/personaldata.svg" alt="" class="icon" />
-                        <p>Personal data</p>
-                    </li>
-                    <li>
-                        <span></span>
-                        <img src="/images/payout.svg" alt="" class="icon" />
-                        <p>Payout</p>
-                    </li>
-                    <li>
-                        <span></span>
-                        <img src="/images/postback.svg" alt="" class="icon" />
-                        <p>Postback</p>
-                    </li>
-                </ul>
+                <a href="#main-menu" id="main-menu-toggle" aria-label="Open main menu">
+                    <span class="fa fa-bars" aria-hidden="true"></span>
+                </a>
+                <div class="logo">Just do it</div>
+                <nav id="main-menu" class="main-menu" aria-label="Main menu">
+                    <a href="#main-menu-toggle" id="main-menu-close" class="menu-close" aria-label="Close main menu">
+                        <span class="fa fa-close" aria-hidden="true"></span>
+                    </a>
+                    <ul>
+                        <li>
+                            <span></span>
+                            <div><img src="/images/general.svg" alt="" class="icon" /></div>
+                            <a href="#">General</a>
+                        </li>
+                        <li>
+                            <span></span>
+                            <img src="/images/details.svg" alt="" class="icon" />
+                            <a href="#">Details</a>
+                        </li>
+                        <li>
+                            <span></span>
+                            <img src="/images/links.svg" alt="" class="icon" />
+                            <a href="#">Links</a>
+                        </li>
+                        <li>
+                            <span></span>
+                            <img src="/images/banners.svg" alt="" class="icon" />
+                            <a href="#">Banners</a>
+                        </li>
+                        <li>
+                            <span></span>
+                            <img src="/images/personaldata.svg" alt="" class="icon" />
+                            <a href="#">Personal data</a>
+                        </li>
+                        <li>
+                            <span></span>
+                            <img src="/images/payout.svg" alt="" class="icon" />
+                            <a href="#">Payout</a>
+                        </li>
+                        <li>
+                            <span></span>
+                            <img src="/images/postback.svg" alt="" class="icon" />
+                            <a href="#">Postback</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#main-menu-toggle" class="backdrop" tabindex="-1" aria-hidden="true"></a>
+                <hr>
                 <div class="user-profile">
 
                 </div>
