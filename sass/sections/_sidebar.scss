@@ -1,0 +1,43 @@
+.sidebar {
+    position: fixed;
+    background: #191919;
+    margin: 0;
+    color: $font-color;
+    .logo {
+        .just-do-it {
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 24px;
+        }
+    }
+    .menu {
+        display: none;
+        list-style-type: none;
+        li {
+            margin: auto 0;
+            position: relative;
+            span {
+                display: none;
+            }
+            &:hover {
+                background-color: #282828;
+                color: white;
+                span {
+                    display: visible;
+                    position: absolute;
+                    margin: 0;
+                    padding: 0;
+                    width: 5px;
+                    background-color: $main-color;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .sidebar {
+        .menu {
+            display: visible;
+        }
+    }
+}
