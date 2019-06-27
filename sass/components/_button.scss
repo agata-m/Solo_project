@@ -1,0 +1,24 @@
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    fill: white;
+    border: none;
+    width: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    &:hover {
+        transition: $main-color-darker 0.5s ease;
+        background-color: $main-color-darker;
+        cursor: pointer;
+    }
+}
+
+.btn-disabled {
+    background-color: $light-grey-2;
+    color: white;
+}

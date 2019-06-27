@@ -1,5 +1,14 @@
 .icon {
     height: 20px;
     max-height: 100%;
-    color: $font-color;
+    fill: $font-color;
+    &:hover {
+        transition: $main-color 0.5s ease;
+        fill: $dark-grey;
+        cursor: pointer;
+    }
+}
+
+.icon-sm {
+    width: 25px;
 }

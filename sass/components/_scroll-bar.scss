@@ -1,0 +1,16 @@
+.scrollbar {
+    overflow-y: scroll;
+    max-height: 120px;
+    &::-webkit-scrollbar {
+        width: 15px; 
+    }
+    &::-webkit-scrollbar-track {
+        background: $light-grey-1; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $light-grey-2; 
+        &:hover {
+            background: $light-grey-3; 
+        }
+    }
+}

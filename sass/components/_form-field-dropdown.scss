@@ -1,0 +1,21 @@
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+    border: 1px solid $light-grey-2;
+    padding: 10px 30px 10px 15px;
+    font-size: 16px;
+    display: block;
+    border-radius: 3px;
+    width: 100%;
+    outline: none;
+    background-image: url(https://image.flaticon.com/icons/png/128/118/118738.png);
+    background-size: 15px auto;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer;
+    &:focus {
+        border: $dark-grey;
+    }
+}

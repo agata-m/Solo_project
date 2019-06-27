@@ -1,0 +1,117 @@
+#general-statistic {
+    padding-bottom: 0;
+    .container-box {
+        .calendar {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid $light-grey-2;
+            .dates {
+                width: auto;
+                padding: 10px 20px;
+                border: 1px solid $light-grey-2;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                div {
+                    padding-right: 60px;
+                }
+                .border-right {
+                    border-right: 1px solid $light-grey-2;
+                    margin-right: 10px;
+                }
+            }
+            button {
+                margin-left: 20px;
+                margin-bottom: 0;
+                width: 40px;
+                .icon {
+                    fill: white;
+                }
+            }
+        }
+        .earnings {
+            font-weight: bold;
+            padding: 40px;
+            img {
+                width: 100%;
+                padding: 0 20px;
+            }
+        }
+        .statistics {
+            padding: 40px;
+            display: flex;
+            justify-content: space-between; 
+            .column {
+                width: 45%;
+                .row {
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 1px solid $light-grey-2;
+                    padding: 10px 0;
+                    .row-heading {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+	MEDIA QUERIES
+*/
+
+@media(min-width: 992px) {
+    #general-statistic {
+        margin-top: 80px;
+        .container-box {
+            .calendar {
+                .dates {
+                    &:hover {
+                        border: 1px solid $dark-grey;
+                        transition: 0.5s ease;
+                        cursor: pointer;
+                        .icon {
+                            fill: $dark-grey;
+                        }
+                    }
+                }
+                button {
+                    margin-left: 20px;
+                    width: 40px;
+                    .icon {
+                        fill: white;
+                    }
+                }
+            }
+            .earnings {
+                font-weight: bold;
+                padding: 40px;
+                img {
+                    width: 100%;
+                    padding: 0 20px;
+                }
+            }
+            .statistics {
+                padding: 40px;
+                display: flex;
+                justify-content: space-between; 
+                .column {
+                    width: 45%;
+                    .row {
+                        display: flex;
+                        justify-content: space-between;
+                        border-bottom: 1px solid $light-grey-2;
+                        padding: 10px 0;
+                        .row-heading {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    };
+}
