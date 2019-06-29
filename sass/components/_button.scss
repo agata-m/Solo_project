@@ -21,4 +21,16 @@ button {
 .btn-disabled {
     background-color: $light-grey-2;
     color: white;
+    .icon {
+        fill: white;
+        max-width: 25px;
+        max-height: 25px;
+    }
+    &:hover {
+        cursor: default;
+        background-color: $light-grey-2;
+        .icon {
+            fill: white;
+        }
+    }
 }

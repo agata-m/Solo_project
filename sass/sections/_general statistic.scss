@@ -34,14 +34,13 @@
         }
         .earnings {
             font-weight: bold;
-            padding: 40px;
-            img {
-                width: 100%;
-                padding: 0 20px;
+            padding: 10px 20px 40px 20px;
+            div {
+                margin-bottom: 40px;
             }
         }
         .statistics {
-            padding: 40px;
+            padding: 40px 20px;
             display: flex;
             justify-content: space-between; 
             .column {
@@ -89,16 +88,10 @@
             }
             .earnings {
                 font-weight: bold;
-                padding: 40px;
-                img {
-                    width: 100%;
-                    padding: 0 20px;
-                }
+                padding: 10px 40px 40px 40px;
             }
             .statistics {
                 padding: 40px;
-                display: flex;
-                justify-content: space-between; 
                 .column {
                     width: 45%;
                     .row {

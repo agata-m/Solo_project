@@ -168,7 +168,6 @@
                                         C4.6,4,6.6,2,9.1,2s4.5,2,4.5,4.5V12h-9V6.5z M4.3,13h9.5l1.3,2H3L4.3,13z M9.1,17c-0.7,0-1.2-0.4-1.4-1h2.8
                                         C10.3,16.6,9.7,17,9.1,17z"/>
                                 </svg>
-                                <span></span>
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 19 15" style="enable-background:new 0 0 19 15;" xml:space="preserve" class="icon">
                                     <path d="M13.9,3.1l-0.7,0.7L16.3,7H3v1h13.3l-3.1,3.1l0.7,0.7l4.4-4.4L13.9,3.1z M10,14H1V1h9v3h1V0H0v15h11v-4h-1V14z"/>
@@ -183,7 +182,7 @@
             <div id="links" class="col-sm-12 col-md-12 col-lg-10 col-offset-lg-2 col-xl-10 col-offset-xl-2">
                 <div class="container-box">
                     <div class="section-heading">Links</div>
-                    <button id="addUrlModal">+ add new</button>
+                    <button id="addUrlModalTop">+ add new</button>
                     <table class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
                         <tr>
                             <th class="row-heading col-sm-4 col-md-4 col-lg-5 col-xl-5">Home page</th>
@@ -386,60 +385,456 @@
                             </th>
                         </tr>
                     </table>
-                    <button id="addUrlModal">+ add new</button>
+                    <button id="addUrlModalBottom">+ add new</button>
                 </div>
             </div>
             <div class="overlay" id="overlay">
                 <div class="modal" id="myModal">
-                    <div class="section-heading">Links
+                    <div class="section-heading">Add URL
                         <div class="btn-close js--close-modal">x</div>
                     </div>
-                    <div class="row">
-                        <div class="column col-sm-12 col-md-12 col-lg-10 col-xl-10">
-                            <div>Scheme name</div>
-                            <input type="text" class="col-sm-12 col-md-12 col-lg-6 col-xl-6">Name
-                            <select name="compain" class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </div>
-                        <div class="column col-sm-12 col-md-12 col-lg-2 col-xl-2">
-                            <div>Language</div>
-                            <select name="compain" class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                <option value="en">EN</option>
-                                <option value="fr">FR</option>
-                                <option value="es">ES</option>
-                                <option value="pl">PL</option>
-                            </select>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div>Select websites</div>
-                        <div class="row scrollbar">
-                            <div class="column col-sm-4 col-md-4 col-lg-4 col-xl-4">
-
-
-
-
+                    <form action="" method="POST">
+                        <div class="row selects">
+                            <div class="column">
+                                <div class="field-heading">Scheme name</div>
+                                <div class="form-fields">
+                                    <input type="text" name="name" placeholder="Name" required>
+                                    <select name="compain" required>
+                                        <option value="" disabled selected>Select compain</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="column languages">
+                                <div class="field-heading">Language</div>
+                                <select name="language" required>
+                                    <option value="en" id="en">EN</option>
+                                    <option value="fr">FR</option>
+                                    <option value="es">ES</option>
+                                    <option value="pl">PL</option>
+                                </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <input type="text">Generated link
-                        <button class="btn-disabled">Copy link
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 18 10" style="enable-background:new 0 0 18 10;" xml:space="preserve" class="icon">
-                                <path d="M7,8H5C3.3,8,2,6.7,2,5s1.3-3,3-3h1V1H5C2.8,1,1,2.8,1,5s1.8,4,4,4h2c2.2,0,4-1.8,4-4h-1C10,6.7,8.7,8,7,8z M13,1h-2
-                                    C8.8,1,7,2.8,7,5h1c0-1.7,1.3-3,3-3h2c1.7,0,3,1.3,3,3s-1.3,3-3,3h-1v1h1c2.2,0,4-1.8,4-4S15.2,1,13,1z"/>
-                            </svg>
-                        </button>
-                        <button class="js--close-modal">Save</button>
-                    </div>
+                        <div class="row websites">
+                            <div class="field-heading">Select websites</div>
+                            <div class="scrollbar checkbox-section">
+                                <div class="column">
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="landingPage">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Landing page Money
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="LP">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            LP Your choice
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="wallet-1">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            LP Wallet
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="shop-1">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            E-Shop 01
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="toyStore-1">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Toy Store
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="bookStore-1">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Book Store
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="charity">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Charity
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="icons">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            LP Icons Store
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="template">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Templates Store
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="random">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Random text
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="column">
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="mobileApp1">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Mobile app
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="senatorSignals-1">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            LP Senator free signals
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="lp-de">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            LP DE Your choice
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="ivest">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Invest wisely
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="toyStoreSignUp">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Toy Store LP Sign up page
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="accounts">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Senator Account types
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="senatorApp">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Senator Mobile app
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="senatorStore">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Senator Store
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="promo">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Senator April Promo
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="lg-learning">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Language Learning LP
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="column">
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="secondSite">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Your second site
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="second-lp">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Your second LP
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="money">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Landing page Money
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="yourChoice">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            LP Your choice
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="wallet-2">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            LP Wallet
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="shop-2">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            E-Shop 01
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="toyStore-2">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Toy Store
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="bookStore-2">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Book Store
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="mobileApp2">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Moble app
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                    <label class="checkbox-intro">
+                                        <div>
+                                            <input type="checkbox" name="senatorSignals-2">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            LP Senator free signals
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row btn-row">
+                            <input type="text" placeholder="Generated link">
+                            <button class="btn-disabled">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 18 10" style="enable-background:new 0 0 18 10;" xml:space="preserve" class="icon">
+                                    <path d="M7,8H5C3.3,8,2,6.7,2,5s1.3-3,3-3h1V1H5C2.8,1,1,2.8,1,5s1.8,4,4,4h2c2.2,0,4-1.8,4-4h-1C10,6.7,8.7,8,7,8z M13,1h-2
+                                        C8.8,1,7,2.8,7,5h1c0-1.7,1.3-3,3-3h2c1.7,0,3,1.3,3,3s-1.3,3-3,3h-1v1h1c2.2,0,4-1.8,4-4S15.2,1,13,1z"/>
+                                </svg>
+                                Copy link
+                            </button>
+                            <button type="submit" class="js--close-modal">Save</button>
+                        </div>
+                    </form> 
                 </div>
             </div>
         </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="/js/script.js"></script>
     </body>
 </html>

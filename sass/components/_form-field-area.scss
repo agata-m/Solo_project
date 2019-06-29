@@ -1,21 +1,16 @@
-input[type="text"] {
-    padding: 10px;
-    font-size: 14px;
-    color: #000000;
-    outline: $light-grey-2;
+textarea, input[type="text"] {
     width: 100%;
-}
-
-textarea {
-    width: 100%;
-    height: 200px;
     border-radius: 3px;
-    border-color: $light-grey-2;
+    border: 1px solid $light-grey-2;
     padding: 10px;
     color: $light-grey-2;
-    resize: none;
     &:focus {
         border-color: $dark-grey;
         outline: none;
     }
+}
+
+textarea {
+    height: 200px;
+    resize: none;
 }

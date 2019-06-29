@@ -7,6 +7,7 @@ table {
         padding-top: 20px;
         padding-bottom: 20px;
         flex-wrap: wrap;
+        overflow: hidden;
         &:first-of-type {
             border-top: 1px solid $light-grey-2;
         }
@@ -21,13 +22,16 @@ table {
                 text-decoration: none;
                 font-weight: normal;
                 color: $link-color;
-                overflow-y: hidden;
             }
         }
         .row-icons {
             color: white;
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
+            a {
+                margin: 0 5px;
+            }
         }
     }
 }
@@ -46,6 +50,9 @@ table {
             .row-icons {
                 flex-wrap: nowrap;
                 justify-content: space-around;
+                a {
+                    margin: 0;
+                }
                 .icon {
                     fill: white;
                 }

@@ -168,7 +168,6 @@
                                         C4.6,4,6.6,2,9.1,2s4.5,2,4.5,4.5V12h-9V6.5z M4.3,13h9.5l1.3,2H3L4.3,13z M9.1,17c-0.7,0-1.2-0.4-1.4-1h2.8
                                         C10.3,16.6,9.7,17,9.1,17z"/>
                                 </svg>
-                                <span></span>
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 19 15" style="enable-background:new 0 0 19 15;" xml:space="preserve" class="icon">
                                     <path d="M13.9,3.1l-0.7,0.7L16.3,7H3v1h13.3l-3.1,3.1l0.7,0.7l4.4-4.4L13.9,3.1z M10,14H1V1h9v3h1V0H0v15h11v-4h-1V14z"/>
@@ -198,14 +197,15 @@
                         <div class="row">
                             <div class="field col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                 <div type="text" class="field-heading">Postback type</div>
-                                <select name="postback-type">
+                                <select name="postback-type" required>
                                     <option value="S2S">S2S(http://...)</option>
                                     <option value="other">Other</option>
                                 </select>
                             </div>
                             <div class="field col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                 <div type="text" class="field-heading">To countries</div>
-                                <select name="to-countires">
+                                <select name="to-countries" required>
+                                    <option value="" disabled selected>Select countries</option>
                                     <option value="poland">Poland</option>
                                     <option value="uk">UK</option>
                                     <option value="germany">Germany</option>
@@ -214,7 +214,8 @@
                             </div>
                             <div class="field col-sm-12 col-md-12 col-lg-4 col-xl-4">
                                 <div type="text" class="field-heading">Sending options</div>
-                                <select name="sending-options">
+                                <select name="sending-options" required>
+                                    <option value="" disabled selected>Select</option>
                                     <option name="normal">Normal</option>
                                     <option name="express">Express</option>
                                     <option name="other">Other</option>
@@ -226,58 +227,82 @@
                                 <div type="text" class="field-heading"><b>NOT</b> send statuses</div>
                                 <div class="scrollbar">
                                     <label class="checkbox-intro">
-                                        <input type="checkbox" name="checkNumber">
-                                        <div class="checkbox"><i class="fa fa-check"></i></div>
-                                        Check number
-                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                            viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
-                                            <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
-                                        </svg>
+                                        <div>
+                                            <input type="checkbox" name="checkNumber">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Check number
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
                                     </label>
                                     <label class="checkbox-intro">
-                                        <input type="checkbox" name="noAnswer">
-                                        <div class="checkbox"><i class="fa fa-check"></i></div>
-                                        No answer
-                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                            viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
-                                            <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
-                                        </svg>
+                                        <div>
+                                            <input type="checkbox" name="noAnswer">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            No answer
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
                                     </label>
                                     <label class="checkbox-intro">
-                                        <input type="checkbox" name="noCall">
-                                        <div class="checkbox"><i class="fa fa-check"></i></div>
-                                        No call
-                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                            viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
-                                            <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
-                                        </svg>
+                                        <div>
+                                            <input type="checkbox" name="noCall">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            No call
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>   
                                     </label>
                                     <label class="checkbox-intro">
-                                        <input type="checkbox" name="callAgain">
-                                        <div class="checkbox"><i class="fa fa-check"></i></div>
-                                        Call again
-                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                            viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
-                                            <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
-                                        </svg>
+                                        <div>
+                                            <input type="checkbox" name="callAgain">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Call again
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
                                     </label>
                                     <label class="checkbox-intro">
-                                        <input type="checkbox" name="busy">
-                                        <div class="checkbox"><i class="fa fa-check"></i></div>
-                                        Busy
-                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                            viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
-                                            <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
-                                        </svg>
+                                        <div>
+                                            <input type="checkbox" name="busy">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Busy
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
                                     </label>
                                     <label class="checkbox-intro">
-                                        <input type="checkbox" name="voicemail">
-                                        <div class="checkbox"><i class="fa fa-check"></i></div>
-                                        Voicemail
-                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                            viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
-                                            <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
-                                        </svg>
+                                        <div>
+                                            <input type="checkbox" name="voicemail">
+                                            <div class="checkbox"><i class="fa fa-check"></i></div>
+                                            Voicemail
+                                        </div>
+                                        <div>
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 13 13" style="enable-background:new 0 0 13 13;" xml:space="preserve" class="icon">
+                                                <path d="M12,12H1V1h3V0H0v13h13V9h-1V12z M7,0v1h4.3L4.1,8.1l0.7,0.7L12,1.7V6h1V0H7z"/>
+                                            </svg>
+                                        </div>
                                     </label>
                                 </div>
                             </div>
@@ -289,11 +314,8 @@
                                 </div>
                                 <div class="slide-container">
                                     <input type="range" name="send-after" id="rangeSlider" min="0" max="168" step="1" value="104" class="slider">
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        viewBox="0 0 7 5" style="enable-background:new 0 0 7 5;" xml:space="preserve" class="icon">
-                                        <polygon points="6.1,4.9 3.5,2.2 0.9,4.9 0.1,4.1 3.5,0.8 6.9,4.1 "/>
-                                    </svg>
-                                    <div id="rangeValue"></div>
+                                    <output for="send-after" onforminput="value = send-after.valueAsNumber;">hours</output>
+                                    <!-- <div id="rangeValue"></div> -->
                                 </div>
                             </div>
                         </div>
@@ -302,6 +324,7 @@
                 </div>
             </div>
         </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>  
     <script src="/js/script.js"></script>
     </body>
 </html>

@@ -16,6 +16,6 @@ select {
     background-position: right 10px center;
     cursor: pointer;
     &:focus {
-        border: $dark-grey;
+        border: 1px solid $dark-grey;
     }
 }
