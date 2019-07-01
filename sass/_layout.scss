@@ -34,8 +34,8 @@ body {
     + .first {
         margin-bottom: 0;
     }
-    @media(max-width: 992px) {
-        margin-left: 60px;
+    @media(max-width: 1199px) {
+        margin-left: 80px;
     }
 }
 
@@ -91,14 +91,6 @@ body {
 /*
 * === media queries LAYOUT ===
 */
-
-@media(min-width: 992px) {
-    .container-box {
-        + .first {
-            margin-top: 80px;
-        }
-    };
-}
 
 @media(min-width: 1200px) {
     .container-box {

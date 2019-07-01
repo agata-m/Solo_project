@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
@@ -179,7 +180,7 @@
             </nav>
         </section>
         <section id="postback">
-            <div id="new-postback" class="col-sm-12 col-md-12 col-lg-10 col-offset-lg-2 col-xl-10 col-offset-xl-2">
+            <div id="new-postback" class="col-sm-12 col-md-12 col-lg-12 col-xl-10 col-offset-xl-2">
                 <div class="container-box first">
                     <div class="section-heading">New postback</div>
                     <div class="parameters">You can insert some parameters in this postback:</div>
@@ -310,12 +311,12 @@
                                 <div type="text" for="send-after" class="field-heading">Send after</div>
                                 <div class="range-labels">
                                     <p>0</p>
-                                    <p>168</p>
+                                    <p class="right">168</p>
                                 </div>
                                 <div class="slide-container">
-                                    <input type="range" name="send-after" id="rangeSlider" min="0" max="168" step="1" value="104" class="slider">
-                                    <output for="send-after" onforminput="value = send-after.valueAsNumber;">hours</output>
-                                    <!-- <div id="rangeValue"></div> -->
+                                    <input type="range" name="send-after" id="rangeSlider" min="0" max="168" step="1" value="84" class="slider">
+                                    <div id="rangeValue"></div>
+                                    <div id="triangle"></div>
                                 </div>
                             </div>
                         </div>
@@ -324,7 +325,9 @@
                 </div>
             </div>
         </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>  
-    <script src="/js/script.js"></script>
+        <script src="vendor/jQuery.js"></script>
+        <script src="vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script src="/js/script.js"></script>
     </body>
 </html>

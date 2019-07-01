@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
@@ -179,11 +180,11 @@
             </nav>
         </section>
         <section id="links-section">
-            <div id="links" class="col-sm-12 col-md-12 col-lg-10 col-offset-lg-2 col-xl-10 col-offset-xl-2">
+            <div id="links" class="col-sm-12 col-md-12 col-lg-12 col-xl-10 col-offset-xl-2">
                 <div class="container-box">
                     <div class="section-heading">Links</div>
                     <button id="addUrlModalTop">+ add new</button>
-                    <table class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                    <table class="col-sm-12 col-md-12 col-lg-10 col-xl-8">
                         <tr>
                             <th class="row-heading col-sm-4 col-md-4 col-lg-5 col-xl-5">Home page</th>
                             <th class="row-link col-sm-6 col-md-6 col-lg-5 col-xl-5"><a>http://www.homepage.com</a></th>
@@ -409,12 +410,11 @@
                             </div>
                             <div class="column languages">
                                 <div class="field-heading">Language</div>
-                                <select name="language" required>
-                                    <option value="en" id="en">EN</option>
-                                    <option value="fr">FR</option>
-                                    <option value="es">ES</option>
-                                    <option value="pl">PL</option>
-                                </select>
+                                <div id="flags"
+                                    data-selectedcountry="US"
+                                    data-showflags="true"
+                                    data-onchangecallback="onChangeCallback">
+                                </div>
                             </div>
                         </div>
                         <div class="row websites">
@@ -834,7 +834,9 @@
                 </div>
             </div>
         </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="/js/script.js"></script>
+        <script src="vendor/jQuery.js"></script>
+        <script src="vendor/Filterable-Country-Picker-niceCountryInput/niceCountryInput.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script src="/js/script.js"></script>
     </body>
 </html>

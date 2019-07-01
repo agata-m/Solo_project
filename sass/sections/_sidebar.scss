@@ -19,7 +19,7 @@ nav {
 		opacity: 0;
 		z-index: 4;
 		&:checked ~ .hb { // changing bars into a crossmark
-			@media(max-width: 768px) {
+			@media(max-width: 1199px) {
 				opacity: 1;
 				transform: rotate(45deg) translate(-2px, -1px);
 				background: lightgrey;
@@ -104,6 +104,7 @@ nav {
 			display: flex;
 			align-items: center;
 			padding: 20px;
+			cursor: pointer;
 			#pic {
 				background: white;
 				border-radius: 50%;
@@ -131,7 +132,7 @@ nav {
 	MEDIA QUERIES
 */
 
-@media(min-width: 992px) {
+@media(min-width: 1200px) {
 
 	// Toogle button
 
@@ -178,6 +179,10 @@ nav {
 			font-size: 24px;
 			margin-bottom: 10px;
 			color: white;
+			padding-right: 20px;
+		}
+		.icon {
+			margin-left: 0 !important;
 		}
 		.user-profile {					// manager section
 			#manager {
@@ -194,5 +199,11 @@ nav {
 				cursor: pointer;
 			}
 		}
+	};
+
+	// Nav
+
+	nav {
+		padding-right: 0 !important;
 	};
 }

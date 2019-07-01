@@ -1,9 +1,12 @@
 #postback {
-    @media(min-width: 992px) {
+    @media(min-width: 1200px) {
         margin-top: 80px;
     }
     #new-postback {
         padding-top: 0;
+        @media(min-width: 1200px) {
+            padding-left: 0 !important;
+        }
         .container-box{
             padding-bottom: 0;
             .field-heading {

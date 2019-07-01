@@ -7,7 +7,6 @@ table {
         padding-top: 20px;
         padding-bottom: 20px;
         flex-wrap: wrap;
-        overflow: hidden;
         &:first-of-type {
             border-top: 1px solid $light-grey-2;
         }
@@ -18,10 +17,16 @@ table {
             font-weight: bold;
         }
         .row-link {
+            overflow: hidden;
+            text-overflow: ellipsis;
             a {
                 text-decoration: none;
                 font-weight: normal;
                 color: $link-color;
+                cursor: pointer;
+                &:hover {
+                    color: $main-color;
+                }
             }
         }
         .row-icons {
@@ -39,14 +44,6 @@ table {
 @media(min-width: 992px) {
     table {
         tr {
-            .row-link {
-                a {
-                    cursor: pointer;
-                    &:hover {
-                        color: $main-color;
-                    }
-                }
-            }
             .row-icons {
                 flex-wrap: nowrap;
                 justify-content: space-around;

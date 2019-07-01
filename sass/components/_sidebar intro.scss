@@ -27,35 +27,21 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
-
-    }
-}
-
-/*
-	MEDIA QUERIES
-*/
-
-@media(min-width: 992px) {
-    #menu ul {
-        li {
-            span {
-                background-color: $dark-grey;
+        &:hover {
+            background: $light-grey-3;
+            color: white;
+            cursor: pointer;
+            transition: .5s ease;
+            .icon {
+                fill: white;
             }
-            &:hover {
-                background: $light-grey-3;
+            span {
+                background-color: $main-color;
+            }
+            a {
                 color: white;
-                cursor: pointer;
-                transition: .5s ease;
-                .icon {
-                    fill: white;
-                }
-                span {
-                    background-color: $main-color;
-                }
-                a {
-                    color: white;
-                }
             }
         }
-    };
+
+    }
 }

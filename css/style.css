@@ -385,9 +385,9 @@ body {
   margin-bottom: 0;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1199px) {
   .container-box {
-    margin-left: 60px;
+    margin-left: 80px;
   }
 }
 
@@ -808,12 +808,6 @@ body {
 /*
 * === media queries LAYOUT ===
 */
-@media (min-width: 992px) {
-  .container-box + .first {
-    margin-top: 80px;
-  }
-}
-
 @media (min-width: 1200px) {
   .container-box + .first {
     margin-top: 80px;
@@ -848,7 +842,6 @@ table tr {
   padding-bottom: 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  overflow: hidden;
 }
 
 table tr:first-of-type {
@@ -863,10 +856,20 @@ table tr .row-heading {
   font-weight: bold;
 }
 
+table tr .row-link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 table tr .row-link a {
   text-decoration: none;
   font-weight: normal;
   color: #56819F;
+  cursor: pointer;
+}
+
+table tr .row-link a:hover {
+  color: #FFA200;
 }
 
 table tr .row-icons {
@@ -884,12 +887,6 @@ table tr .row-icons a {
 }
 
 @media (min-width: 992px) {
-  table tr .row-link a {
-    cursor: pointer;
-  }
-  table tr .row-link a:hover {
-    color: #FFA200;
-  }
   table tr .row-icons {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -1001,28 +998,23 @@ button:hover {
   transition: background-color 0.3s ease;
 }
 
-/*
-	MEDIA QUERIES
-*/
-@media (min-width: 992px) {
-  #menu ul li span {
-    background-color: #333333;
-  }
-  #menu ul li:hover {
-    background: #979797;
-    color: white;
-    cursor: pointer;
-    transition: .5s ease;
-  }
-  #menu ul li:hover .icon {
-    fill: white;
-  }
-  #menu ul li:hover span {
-    background-color: #FFA200;
-  }
-  #menu ul li:hover a {
-    color: white;
-  }
+#menu ul li:hover {
+  background: #979797;
+  color: white;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+#menu ul li:hover .icon {
+  fill: white;
+}
+
+#menu ul li:hover span {
+  background-color: #FFA200;
+}
+
+#menu ul li:hover a {
+  color: white;
 }
 
 textarea, input[type="text"] {
@@ -1062,6 +1054,7 @@ textarea {
   font-weight: normal;
   padding: 10px 0;
   padding-right: 20px;
+  line-height: 1.5;
 }
 
 .checkbox-section .checkbox-intro div {
@@ -1160,6 +1153,10 @@ select:focus {
 .left-border .slide-container {
   width: 100%;
   position: relative;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 @media (max-width: 991px) {
@@ -1240,22 +1237,24 @@ select:focus {
 }
 
 .left-border .slide-container #rangeValue {
-  position: relative;
-  margin-top: 10px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-top: 30px;
 }
 
 /* MOVING VALUE BUBBLE */
-output {
+#triangle {
   position: absolute;
   width: 40px;
   height: 30px;
-  text-align: center;
   display: inline-block;
-  top: 250%;
-  left: 0;
+  top: 70%;
+  left: 47%;
 }
 
-output:after {
+#triangle:after {
   content: "";
   position: absolute;
   width: 0;
@@ -1322,7 +1321,7 @@ nav {
   z-index: 4;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1199px) {
   #menuToggle input:checked ~ .hb {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
@@ -1414,6 +1413,7 @@ nav {
   -ms-flex-align: center;
       align-items: center;
   padding: 20px;
+  cursor: pointer;
 }
 
 #menu .user-profile .profile-pic #pic {
@@ -1442,7 +1442,7 @@ nav {
 /*
 	MEDIA QUERIES
 */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   #menuToggle {
     top: -60px;
   }
@@ -1481,6 +1481,10 @@ nav {
     font-size: 24px;
     margin-bottom: 10px;
     color: white;
+    padding-right: 20px;
+  }
+  #menu .icon {
+    margin-left: 0 !important;
   }
   #menu .user-profile #manager {
     padding: 20px;
@@ -1496,6 +1500,9 @@ nav {
         align-items: center;
     padding: 20px;
     cursor: pointer;
+  }
+  nav {
+    padding-right: 0 !important;
   }
 }
 
@@ -1532,6 +1539,16 @@ nav {
 #general-statistic .container-box .calendar .dates .border-right {
   border-right: 1px solid #E3E3E3;
   margin-right: 10px;
+}
+
+#general-statistic .container-box .calendar .dates:hover {
+  border: 1px solid #333333;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+#general-statistic .container-box .calendar .dates:hover .icon {
+  fill: #333333;
 }
 
 #general-statistic .container-box .calendar button {
@@ -1583,43 +1600,22 @@ nav {
 */
 @media (min-width: 992px) {
   #general-statistic {
-    margin-top: 80px;
-  }
-  #general-statistic .container-box .calendar .dates:hover {
-    border: 1px solid #333333;
-    transition: 0.5s ease;
-    cursor: pointer;
-  }
-  #general-statistic .container-box .calendar .dates:hover .icon {
-    fill: #333333;
-  }
-  #general-statistic .container-box .calendar button {
-    margin-left: 20px;
-    width: 40px;
-  }
-  #general-statistic .container-box .calendar button .icon {
-    fill: white;
+    padding-left: 0;
   }
   #general-statistic .container-box .earnings {
-    font-weight: bold;
     padding: 10px 40px 40px 40px;
   }
   #general-statistic .container-box .statistics {
     padding: 40px;
   }
-  #general-statistic .container-box .statistics .column {
-    width: 45%;
+  #links {
+    padding-left: 0;
   }
-  #general-statistic .container-box .statistics .column .row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    border-bottom: 1px solid #E3E3E3;
-    padding: 10px 0;
-  }
-  #general-statistic .container-box .statistics .column .row .row-heading {
-    font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+  #general-statistic {
+    margin-top: 100px;
   }
 }
 
@@ -1740,24 +1736,8 @@ nav {
 /*
 	MEDIA QUERIES
 */
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   .topbar {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .topbar {
-    display: none;
-  }
-}
-
-@media (min-width: 992px) {
-  .topbar {
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .topbar-moved {
     display: none;
   }
 }
@@ -1772,7 +1752,7 @@ nav {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   #postback {
     margin-top: 80px;
   }
@@ -1780,6 +1760,12 @@ nav {
 
 #postback #new-postback {
   padding-top: 0;
+}
+
+@media (min-width: 1200px) {
+  #postback #new-postback {
+    padding-left: 0 !important;
+  }
 }
 
 #postback #new-postback .container-box {
@@ -1836,9 +1822,12 @@ nav {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   #links-section {
     margin-top: 80px;
+  }
+  #links-section #links {
+    padding-left: 0 !important;
   }
 }
 
@@ -1871,11 +1860,34 @@ nav {
 
 /* MODAL */
 .modal {
-  max-width: 1500px;
   margin: auto;
   background-color: #ffffff;
   position: relative;
   display: none;
+}
+
+@media (max-width: 767px) {
+  .modal {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal {
+    max-width: 992px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal {
+    max-width: 1200px;
+  }
 }
 
 .modal.show {
@@ -1917,9 +1929,23 @@ nav {
       justify-content: space-between;
 }
 
+@media (max-width: 767px) {
+  #overlay #myModal .selects {
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+}
+
 #overlay #myModal .selects .column:first-child {
   width: 80%;
   padding-right: 20px;
+}
+
+@media (max-width: 767px) {
+  #overlay #myModal .selects .column:first-child {
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
 }
 
 #overlay #myModal .selects .column:nth-child(2) {
@@ -1937,8 +1963,10 @@ nav {
   margin-right: 20px;
 }
 
-#overlay #myModal .selects .languages svg {
-  height: 15px;
+@media (max-width: 767px) {
+  #overlay #myModal .selects .column {
+    width: 100%;
+  }
 }
 
 #overlay #myModal .websites {
@@ -1951,11 +1979,17 @@ nav {
 }
 
 #overlay #myModal .websites .checkbox-section {
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  max-height: 200px;
+  max-height: 300px;
+}
+
+@media (min-width: 768px) {
+  #overlay #myModal .websites .checkbox-section {
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    max-height: 200px;
+  }
 }
 
 #overlay #myModal .websites .checkbox-section .column {
@@ -1963,7 +1997,13 @@ nav {
 }
 
 #overlay #myModal .websites .checkbox-section .column .icon {
-  padding-left: 50px;
+  padding-left: 20px;
+}
+
+@media (min-width: 992px) {
+  #overlay #myModal .websites .checkbox-section .column .icon {
+    padding-left: 50px;
+  }
 }
 
 #overlay #myModal .btn-row {
@@ -1982,5 +2022,64 @@ nav {
   width: 160px;
   -ms-flex-pack: justify;
       justify-content: space-between;
+}
+
+#flags {
+  color: grey !important;
+  border: 1px solid #E3E3E3;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+#flags:focus {
+  border: 1px solid #333333;
+}
+
+.niceCountryInputMenu {
+  border: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.niceCountryInputMenu:focus {
+  border: 1px solid #333333;
+}
+
+.niceCountryInputMenuDefaultText {
+  padding: 10px 30px 10px 10px;
+  width: 100%;
+  background-image: url(https://image.flaticon.com/icons/png/128/118/118738.png);
+  background-size: 15px auto;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.niceCountryInputMenuDropdown {
+  color: transparent;
+  position: absolute;
+  top: 0;
+}
+
+.niceCountryInputMenuDropdownContent {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  border: 1px solid #E3E3E3;
+  border-radius: 3px;
+}
+
+.niceCountryInputMenuDropdownContent a {
+  line-height: 30px;
+  height: 30px;
+  padding-left: 5px;
+}
+
+.niceCountryInputMenuFilter {
+  display: none;
+}
+
+.niceCountryInputMenuFilter input {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
