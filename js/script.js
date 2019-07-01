@@ -1,3 +1,17 @@
+//postback --- range slider --- old version, not moving
+
+var slider = document.getElementById("rangeSlider");
+var output = document.getElementById("rangeValue");
+
+
+if(slider) {
+    output.innerHTML = slider.value + ' hours';
+    slider.addEventListener('change', function() {
+		output.innerHTML = slider.value + ' hours';
+	})
+}
+
+
 // jQuery flags selector
 
 function onChangeCallback(ctr) {
@@ -7,6 +21,42 @@ function onChangeCallback(ctr) {
 $(function() {
     new NiceCountryInput($("#flags")).init();
 });
+
+
+//general --- chart configuration
+
+var dupa = document.getElementById('myChart');
+
+if(dupa) {
+    var ctx = dupa.getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar', // chart choice
+        data: {
+            labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"], //x axis labels
+            datasets: [{ //chart series
+                label: "Signups", //series label
+                backgroundColor: '#8DBEC8', //series color
+                borderColor: '#8DBEC8',
+                data: [ 52, 51, 41, 94, 26, 6, 72, 9, 21, 88 ], //series dataset
+            },
+            {
+                label: "FTD",
+                backgroundColor: '#F29E4E',
+                borderColor: '#F29E4E',
+                data: [ 6, 72, 1, 0, 47, 11, 50, 44, 63, 76 ],
+            },
+            {
+                label: "Earned",
+                backgroundColor: '#71B374',
+                borderColor: '#71B374',
+                data: [ 59, 49, 68, 90, 67, 41, 13, 38, 48, 48 ],
+                hidden: true, //series not visible on chart
+            }]
+        },
+    });
+}
+
+
 
 
 //closing modals
@@ -22,11 +72,16 @@ document.querySelectorAll('#overlay .js--close-modal').forEach(function (btn) {
 	})
 })
 
-document.querySelector('#overlay').addEventListener('click', function (e) {
-	if (e.target === this) {
-		closeModal()
-	}
-})
+var overlay = document.querySelector('#overlay');
+
+if(overlay) {
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) {
+            closeModal()
+        }
+    })
+}
+
 
 document.addEventListener('keyup', function (e) {
 	if (e.keyCode === 27) {
@@ -62,46 +117,3 @@ if(urlBottom) {
 		openModal('#myModal')
 	})
 }
-
-
-//postback --- range slider --- old version, not moving
-
-var slider = document.getElementById("rangeSlider");
-var output = document.getElementById("rangeValue");
-output.innerHTML = slider.value + ' hours';
-
-if(slider) {
-	slider.addEventListener('change', function() {
-		output.innerHTML = slider.value + ' hours';
-	})
-}
-
-
-//general --- chart configuration
-
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    type: 'bar', // chart choice
-    data: {
-        labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"], //x axis labels
-        datasets: [{ //chart series
-            label: "Signups", //series label
-            backgroundColor: '#8DBEC8', //series color
-            borderColor: '#8DBEC8',
-            data: [ 52, 51, 41, 94, 26, 6, 72, 9, 21, 88 ], //series dataset
-        },
-        {
-            label: "FTD",
-            backgroundColor: '#F29E4E',
-            borderColor: '#F29E4E',
-            data: [ 6, 72, 1, 0, 47, 11, 50, 44, 63, 76 ],
-        },
-        {
-            label: "Earned",
-            backgroundColor: '#71B374',
-            borderColor: '#71B374',
-            data: [ 59, 49, 68, 90, 67, 41, 13, 38, 48, 48 ],
-            hidden: true, //series not visible on chart
-        }]
-    },
-});
